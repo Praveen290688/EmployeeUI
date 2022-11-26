@@ -1,0 +1,85 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add New Employee</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form [formGroup]="addEmployeeForm" (ngSubmit)="addEmployee()">
+                <div class="mb-3">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input formControlName="firstName" type="text" class="form-control" id="firstName" 
+                  name="firstName" [(ngModel)]="addEmployeeRequest.firstName">
+                 </div>
+                 <small *ngIf= "addEmployeeForm.controls['firstName'].dirty && addEmployeeForm.hasError('required','firstName')" class="text-danger">*FirstName is required</small>
+             
+                  <div class="mb-3">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input formControlName="lastName" type="text" class="form-control" id="lastName" 
+                    name="lastName" [(ngModel)]="addEmployeeRequest.lastName" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['lastName'].dirty && addEmployeeForm.hasError('required','lastName')" class="text-danger">*lastName is required</small>
+
+                   <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input formControlName="email" type="text" class="form-control" id="email"
+                    name="email" [(ngModel)]="addEmployeeRequest.email" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['email'].dirty && addEmployeeForm.hasError('required','email')" class="text-danger">*Email is required</small>
+
+                   <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input formControlName="phoneNumber" type="text" class="form-control" id="phoneNumber"
+                    name="phoneNumber" [(ngModel)]="addEmployeeRequest.phoneNumber" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['phoneNumber'].dirty && addEmployeeForm.hasError('required','phoneNumber')" class="text-danger">*Phone Number is required</small>
+
+                   <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input formControlName="address" type="text" class="form-control" id="address"
+                    name="address" [(ngModel)]="addEmployeeRequest.address" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['address'].dirty && addEmployeeForm.hasError('required','address')" class="text-danger">*Address is required</small>
+
+                   <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input formControlName="city" type="text" class="form-control" id="city"
+                    name="city" [(ngModel)]="addEmployeeRequest.city" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['city'].dirty && addEmployeeForm.hasError('required','city')" class="text-danger">*City is required</small>
+
+                   <div class="mb-3">
+                    <label for="state" class="form-label">State</label>
+                    <input formControlName="state" type="text" class="form-control" id="state"
+                    name="state" [(ngModel)]="addEmployeeRequest.state" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['state'].dirty && addEmployeeForm.hasError('required','state')" class="text-danger">*State is required</small>
+
+                   <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input formControlName="country" type="text" class="form-control" id="country"
+                    name="country" [(ngModel)]="addEmployeeRequest.country" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['country'].dirty && addEmployeeForm.hasError('required','country')" class="text-danger">*Country is required</small>
+
+                   <div class="mb-3">
+                    <label for="postalCode" class="form-label">Postal Code</label>
+                    <input formControlName="postalCode" type="text" class="form-control" id="postalCode" 
+                    name="postalCode" [(ngModel)]="addEmployeeRequest.postalCode">
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['postalCode'].dirty && addEmployeeForm.hasError('required','postalCode')" class="text-danger">*PostalCode is required</small>
+
+                   <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input formControlName="password" type="text" class="form-control" id="password"
+                    name="password" [(ngModel)]="addEmployeeRequest.password" >
+                   </div>
+                   <small *ngIf= "addEmployeeForm.controls['password'].dirty && addEmployeeForm.hasError('required','password')" class="text-danger">*Password is required</small>
+                         
+                <button [disabled]="addEmployeeForm.invalid" type="submit" class="btn btn-primary">Save</button>&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" (click)="closeEmployee()">Close</button>
+              </form>
+
+        </div>
+    </div>   
+
+    
+</div>

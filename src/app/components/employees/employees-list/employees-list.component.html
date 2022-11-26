@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- <a class="navbar-brand" >Employee Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="employees contact">Employees List</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="employees/add">Add Employee</a>
+          </li> &nbsp;
+         </ul>
+      </div>
+      <button (click)="logout()" class="btn btn-danger">Log out</button>
+    </div>
+  </nav> 
+<div class="container my-5">
+    <h1 class="mb-3">Employees</h1>
+
+    <table class="table" *ngIf="employees && employees.length >0" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <!-- <th (onClick)="sortNumberColumn()">FirstName</th> -->
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email </th>
+                <th>PhoneNumber</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>PostalCode</th>
+                <!-- <th>Password</th> -->
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+         
+            <tr *ngFor="let employee of employees; let i = index" [class.active]="i == HighlightRow" >
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phoneNumber}}</td>
+                <td>{{employee.address}}</td>
+                <td>{{employee.city}}</td>
+                <td>{{employee.state}}</td>
+                <td>{{employee.country}}</td>
+                <td>{{employee.postalCode}}</td>
+                <!-- <td>{{employee.password}}</td> -->
+                <td><a [routerLink]="['/employees', 'edit', employee.id ]"> View </a></td>
+            </tr>
+        </tbody>
+    </table>
+
+     
+<p *ngIf="!employees || employees.length <= 0">No Employees Found</p>
+</div>
+
+
